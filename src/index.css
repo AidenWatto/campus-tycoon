@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    @apply bg-neutral-100 text-neutral-800 font-sans antialiased;
+  }
+  h1, h2, h3, h4 {
+    @apply font-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg font-medium text-sm transition-all duration-200 select-none cursor-pointer;
+  }
+  .btn-primary {
+    @apply btn bg-primary-600 text-white hover:bg-primary-700 active:scale-95 shadow-sm hover:shadow-md;
+  }
+  .btn-secondary {
+    @apply btn bg-secondary-500 text-white hover:bg-secondary-600 active:scale-95 shadow-sm;
+  }
+  .btn-accent {
+    @apply btn bg-accent-500 text-white hover:bg-accent-600 active:scale-95 shadow-sm;
+  }
+  .btn-outline {
+    @apply btn bg-transparent border border-neutral-300 text-neutral-700 hover:bg-neutral-100 hover:border-neutral-400 active:scale-95;
+  }
+  .btn-ghost {
+    @apply btn bg-transparent text-neutral-600 hover:bg-neutral-200 active:scale-95;
+  }
+  .btn-danger {
+    @apply btn bg-error-500 text-white hover:bg-error-600 active:scale-95 shadow-sm;
+  }
+  .btn:disabled {
+    @apply opacity-40 cursor-not-allowed pointer-events-none;
+  }
+  .card {
+    @apply bg-white rounded-xl border border-neutral-200 shadow-sm;
+  }
+  .card-hover {
+    @apply card hover:shadow-md hover:border-neutral-300 transition-all duration-200 cursor-pointer;
+  }
+  .stat-pill {
+    @apply inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium;
+  }
+  .metric-bar {
+    @apply w-full h-2 rounded-full bg-neutral-200 overflow-hidden;
+  }
+  .metric-bar-fill {
+    @apply h-full rounded-full transition-all duration-500;
+  }
+  .panel-title {
+    @apply text-xs font-semibold uppercase tracking-wider text-neutral-500;
+  }
+  .input-field {
+    @apply w-full px-4 py-2.5 rounded-lg border border-neutral-300 bg-white text-neutral-800 text-sm focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all;
+  }
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: #c9c1b5 transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply bg-neutral-300 rounded-full;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+}
+
+/* Campus map grid pattern */
+.campus-grid {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
